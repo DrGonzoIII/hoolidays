@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if holidays_list %}
+        <ul>
+        {% for holiday in holidays_list %}
+            <li><a href="/holidays/{{ holiday.id }}/">{{ holiday.user }} - {{ holiday.start_date }}</a></li>
+        {% endfor %}
+        </ul>
+        <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+    {% else %}
+        <p>No holidays are available.</p>
+    {% endif %}
+{% endblock %}
