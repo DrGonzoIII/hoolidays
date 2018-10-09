@@ -1,0 +1,13 @@
+{% extends 'holidays/base.html' %}
+
+{% block content %}
+    {% if holidays_list %}
+        <ul>
+        {% for holiday in holidays_list %}
+            <li><a href="/holidays/{{ holiday.id }}/">{{ holiday.author }} - {{ holiday.holiday_date }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No holidays are available.</p>
+    {% endif %}
+{% endblock %}
